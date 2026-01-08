@@ -24,22 +24,25 @@ importers:
         specifier: ^0.5.4
         version: 0.5.8
       '@sitecore-content-sdk/nextjs':
-        specifier: ^1.3.1
+        specifier: ^1.3.2
         version: 1.3.2(@sitecore-cloudsdk/core@0.5.8)(@sitecore-cloudsdk/events@0.5.8)(@sitecore-cloudsdk/personalize@0.5.8)(@sitecore-feaas/clientside@0.6.4(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(chai@6.2.2)(next@15.5.9(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.97.2))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sinon@21.0.1)(typescript@5.8.3)
       '@sitecore-feaas/clientside':
         specifier: ^0.6.0
         version: 0.6.4(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       next:
-        specifier: ^15.5.0
+        specifier: 15.5.9
         version: 15.5.9(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.97.2)
       next-intl:
         specifier: ^4.3.5
         version: 4.7.0(next@15.5.9(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.97.2))(react@19.2.1)(typescript@5.8.3)
+      next-localization:
+        specifier: ^0.12.0
+        version: 0.12.0(react@19.2.1)
       react:
-        specifier: ^19.1.0
+        specifier: ^19.2.1
         version: 19.2.1
       react-dom:
-        specifier: ^19.1.0
+        specifier: ^19.2.1
         version: 19.2.1(react@19.2.1)
       rsc-env:
         specifier: 0.0.2
@@ -55,7 +58,7 @@ importers:
         specifier: workspace:*
         version: link:../../packages/typescript-config
       '@sitecore-content-sdk/cli':
-        specifier: ^1.3.1
+        specifier: ^1.3.2
         version: 1.3.2(@sitecore-cloudsdk/events@0.5.8)(@types/node@22.19.3)(chai@6.2.2)(sinon@21.0.1)
       '@tailwindcss/postcss':
         specifier: ^4
@@ -93,10 +96,10 @@ importers:
   packages/ui:
     dependencies:
       '@sitecore-content-sdk/nextjs':
-        specifier: ^1.3.1
+        specifier: ^1.3.2
         version: 1.3.2(@sitecore-cloudsdk/core@0.5.8)(@sitecore-cloudsdk/events@0.5.8)(@sitecore-cloudsdk/personalize@0.5.8)(@sitecore-feaas/clientside@0.6.4(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(chai@6.2.2)(next@15.5.9(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.97.2))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sinon@21.0.1)(typescript@5.8.3)
       react:
-        specifier: ^19.1.0
+        specifier: ^19.2.1
         version: 19.2.1
     devDependencies:
       '@repo/typescript-config':
@@ -1692,6 +1695,9 @@ packages:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
     engines: {node: '>=8'}
 
+  dlv@1.1.3:
+    resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
+
   doctrine@2.1.0:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
     engines: {node: '>=0.10.0'}
@@ -2623,6 +2629,11 @@ packages:
       typescript:
         optional: true
 
+  next-localization@0.12.0:
+    resolution: {integrity: sha512-zWEBdWzwvEve6rkhFic4qswV7tZf3mf6kT96qqSgVnh4+Knwu+kXztjZUbIK5iDq/VFxqi0fEc7DgGMNuSdXcQ==}
+    peerDependencies:
+      react: '>=17.0.1'
+
   next@15.5.9:
     resolution: {integrity: sha512-agNLK89seZEtC5zUHwtut0+tNrc0Xw4FT/Dg+B/VLEo9pAcS9rtTKpek3V6kVcVwsB2YlqMaHdfZL4eLEVYuCg==}
     engines: {node: ^18.18.0 || ^19.8.0 || >= 20.0.0}
@@ -2938,6 +2949,10 @@ packages:
     deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
+  rosetta@1.1.0:
+    resolution: {integrity: sha512-3jQaCo2ySoDqLIPjy7+AvN3rluLfkG8A27hg0virL0gRAB5BJ3V35IBdkL/t6k1dGK0TVTyUEwXVUJsygyx4pA==}
+    engines: {node: '>=8'}
+
   rsc-env@0.0.2:
     resolution: {integrity: sha512-ixLbILtzlGEBl25ATa+jBwdKY6GgoN8XwFho+7ycVpCCJ9ijXlWQB0UnLGGU6aWtL+pTzlcaKI7W0xVQjnL5uA==}
 
@@ -3196,6 +3211,9 @@ packages:
   tapable@2.3.0:
     resolution: {integrity: sha512-g9ljZiwki/LfxmQADO3dEY1CbpmXT5Hm2fJ+QaGKwSXUylMybePR7/67YW7jOrrvjEgL1Fmz5kzyAjWVWLlucg==}
     engines: {node: '>=6'}
+
+  templite@1.2.0:
+    resolution: {integrity: sha512-O9BpPXF44a9Pg84Be6mjzlrqOtbP2I/B5PNLWu5hb1n9UQ1GTLsjdMg1z5ROCkF6NFXsO5LQfRXEpgTGrZ7Q0Q==}
 
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
@@ -4968,6 +4986,8 @@ snapshots:
     dependencies:
       path-type: 4.0.0
 
+  dlv@1.1.3: {}
+
   doctrine@2.1.0:
     dependencies:
       esutils: 2.0.3
@@ -6077,6 +6097,11 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
 
+  next-localization@0.12.0(react@19.2.1):
+    dependencies:
+      react: 19.2.1
+      rosetta: 1.1.0
+
   next@15.5.9(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(sass@1.97.2):
     dependencies:
       '@next/env': 15.5.9
@@ -6450,6 +6475,11 @@ snapshots:
     dependencies:
       glob: 7.2.3
 
+  rosetta@1.1.0:
+    dependencies:
+      dlv: 1.1.3
+      templite: 1.2.0
+
   rsc-env@0.0.2: {}
 
   rsvp@3.2.1: {}
@@ -6772,6 +6802,8 @@ snapshots:
   tailwindcss@4.1.18: {}
 
   tapable@2.3.0: {}
+
+  templite@1.2.0: {}
 
   through@2.3.8: {}
 
