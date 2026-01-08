@@ -7,7 +7,7 @@
       "enabled": true,
       "type": "sxa",
       "buildCommand": "nextjsstarter-install-build",
-      "runCommand": "nextjsstarter-start"
+      "runCommand": "nextjsstarter-dev"
     }
   },
   "postActions": {
