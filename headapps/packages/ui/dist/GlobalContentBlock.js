@@ -1,20 +1,9 @@
-import React from 'react';
+import { jsxs as _jsxs, jsx as _jsx } from "react/jsx-runtime";
 import { withDatasourceCheck, Text, RichText as ContentSdkRichText, useComponentProps, } from '@sitecore-content-sdk/nextjs';
 const GlobalContentBlock = ({ fields, rendering, myData, }) => {
     const blogPath = myData;
     const data = useComponentProps(rendering.uid);
-    return (React.createElement("div", { className: "contentBlock" },
-        React.createElement("p", null,
-            "Name: ",
-            data?.name),
-        React.createElement("p", null,
-            "id: ",
-            data?.id),
-        React.createElement("p", null,
-            "Path: ",
-            blogPath),
-        React.createElement(Text, { tag: "h2", className: "contentTitle", field: fields.Heading }),
-        React.createElement(ContentSdkRichText, { className: "contentDescription", field: fields.Content })));
+    return (_jsxs("div", { className: "contentBlock", children: [_jsxs("p", { children: ["Name: ", data?.name] }), _jsxs("p", { children: ["id: ", data?.id] }), _jsxs("p", { children: ["Path: ", blogPath] }), _jsx(Text, { tag: "h2", className: "contentTitle", field: fields.Heading }), _jsx(ContentSdkRichText, { className: "contentDescription", field: fields.Content })] }));
 };
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const getComponentServerProps = async () => {
