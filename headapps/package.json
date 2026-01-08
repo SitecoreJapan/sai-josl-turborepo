@@ -2,9 +2,9 @@
   "name": "head",
   "scripts": {
     "skate-install-build": "pnpm install && pnpm skate-build:next",
-    "skate-build:next": "turbo run build --filter=nextjsstarter",
-    "skate-start": "turbo run start --filter=nextjsstarter",
-    "skate-dev": "turbo run dev --filter=nextjsstarter"
+    "skate-build:next": "turbo run build --filter=sxastarter",
+    "skate-start": "turbo run start --filter=sxastarter",
+    "skate-dev": "turbo run dev --filter=sxastarter"
   },
   "repository": {
     "type": "git",
