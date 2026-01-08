@@ -2,9 +2,9 @@
   "name": "head",
   "scripts": {
     "skate-install-build": "pnpm install && pnpm skate-build:next",
-    "skate-build:next": "turbo run build --filter=content-sdk-nextjs-skate-park-app-router",
-    "skate-start": "turbo run start --filter=content-sdk-nextjs-skate-park-app-router",
-    "skate-dev": "turbo run dev --filter=content-sdk-nextjs-skate-park-app-router"
+    "skate-build:next": "turbo run build --filter=nextjsstarter",
+    "skate-start": "turbo run start --filter=nextjsstarter",
+    "skate-dev": "turbo run dev --filter=nextjsstarter"
   },
   "repository": {
     "type": "git",

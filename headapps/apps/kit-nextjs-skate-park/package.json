@@ -1,9 +1,9 @@
 {
-  "name": "content-sdk-nextjs-skate-park-app-router",
+  "name": "nextjsstarter",
   "version": "1.0.0",
   "private": true,
   "config": {
-    "appName": "content-sdk-nextjs-skate-park-app-router",
+    "appName": "nextjsstarter",
     "graphQLEndpointPath": "/sitecore/api/graph/edge",
     "language": "en",
     "template": "nextjs"
