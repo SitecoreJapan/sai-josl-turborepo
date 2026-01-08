@@ -1,4 +1,4 @@
-import React, { JSX } from 'react';
+import { JSX } from 'react';
 import {
   Text as ContentSdkText,
   Link as ContentSdkLink,
