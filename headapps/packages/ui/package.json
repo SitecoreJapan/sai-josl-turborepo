@@ -1,0 +1,27 @@
+{
+  "name": "@repo/ui",
+  "version": "1.0.0",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@sitecore-content-sdk/nextjs": "^1.0.0",
+    "react": "^19.1.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@turbo/gen": "^1.11.3",
+    "@types/eslint": "^8.56.1",
+    "@types/node": "^22.15.14",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "eslint": "^9.33.0",
+    "typescript": "~5.8.3"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
+  }
+}

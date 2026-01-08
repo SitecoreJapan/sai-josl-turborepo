@@ -42,7 +42,7 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 .vs/
 #Nuget packages folder
-packages/
+authoring/packages/
 
 #Ignore system files
 .DS_Store
