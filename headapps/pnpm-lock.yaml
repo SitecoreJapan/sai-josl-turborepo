@@ -12,7 +12,7 @@ importers:
         specifier: ^2.7.3
         version: 2.7.3
 
-  apps/kit-nextjs-skate-park:
+  apps/nextjsstarter:
     dependencies:
       '@repo/ui':
         specifier: workspace:*

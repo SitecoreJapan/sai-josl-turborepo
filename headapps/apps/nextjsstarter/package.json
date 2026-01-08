@@ -1,9 +1,9 @@
 {
-  "name": "sxastarter",
+  "name": "nextjsstarter",
   "version": "1.0.0",
   "private": true,
   "config": {
-    "appName": "sxastarter",
+    "appName": "nextjsstarter",
     "graphQLEndpointPath": "/sitecore/api/graph/edge",
     "language": "en",
     "template": "nextjs"
