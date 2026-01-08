@@ -49,3 +49,9 @@ packages/
 
 # VS Code settings
 .vscode/
+
+local-containers/.env
+.env
+node_modules
+.turbo
+.pnpm-store
