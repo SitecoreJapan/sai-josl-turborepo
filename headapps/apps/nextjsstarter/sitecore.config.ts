@@ -7,4 +7,5 @@ import { defineConfig } from '@sitecore-content-sdk/nextjs/config';
 export default defineConfig({
   defaultSite: process.env.NEXT_PUBLIC_DEFAULT_SITE_NAME || 'sxastarter',
   defaultLanguage: process.env.NEXT_PUBLIC_DEFAULT_LANGUAGE || 'en',
+  editingSecret: process.env.SITECORE_EDITING_SECRET || '5lDm0WhslcBCaf2rp8zE0M',
 });
