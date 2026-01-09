@@ -1,4 +1,4 @@
-import React, { JSX } from 'react';
+import React, { JSX } from "react";
 import {
   NextImage as ContentSdkImage,
   Link as ContentSdkLink,
@@ -6,8 +6,8 @@ import {
   ImageField,
   Field,
   LinkField,
-} from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from 'lib/component-props';
+} from "@sitecore-content-sdk/nextjs";
+import { ComponentProps } from "lib/component-props";
 
 interface Fields {
   PromoIcon: ImageField;

@@ -1,46 +1,37 @@
 import { JSX } from 'react';
 import {
-  withDatasourceCheck,
-  Text,
-  Field,
+  Text as ContentSdkText,
   RichText as ContentSdkRichText,
-  ComponentParams,
-  ComponentRendering,
+  Field,
 } from '@sitecore-content-sdk/nextjs';
 
-type ComponentProps = {
-  rendering: ComponentRendering;
-  params: ComponentParams;
-  myData: string;
+interface Fields {
+  Heading: Field<string>;
+  Content: Field<string>;
+}
+
+type GlobalContentBlockProps = {
+  params: { [key: string]: string };
+  fields: Fields;
 };
 
-type BlogData = {
-  userId: string;
-  id: string;
-  name: string;
-  title: string;
-  body: string;
-};
-
-type GlobalContentBlockProps = ComponentProps &
-  BlogData & {
-    fields: {
-      Heading: Field<string>;
-      Content: Field<string>;
-    };
-  };
-
-const GlobalContentBlock = ({
-  fields,
-  rendering,
-  myData,
-}: GlobalContentBlockProps): JSX.Element => {
-  return (
-    <div className="contentBlock">
-      <Text tag="h2" className="contentTitle" field={fields.Heading} />
-      <ContentSdkRichText className="contentDescription" field={fields.Content} />
+const GlobalContentBlockDefaultComponent = (props: GlobalContentBlockProps): JSX.Element => (
+  <div className={`component contentBlock ${props.params.styles}`}>
+    <div className="component-content">
+      <span className="is-empty-hint">Global Content Block</span>
     </div>
-  );
-};
+  </div>
+);
 
-export default withDatasourceCheck()<GlobalContentBlockProps>(GlobalContentBlock);
+export const Default = (props: GlobalContentBlockProps): JSX.Element => {
+  if (props.fields) {
+    return (
+      <div className="contentBlock">
+        <ContentSdkText tag="h2" className="contentTitle" field={props.fields.Heading} />
+        <ContentSdkRichText className="contentDescription" field={props.fields.Content} />
+      </div>
+    );
+  }
+
+  return <GlobalContentBlockDefaultComponent {...props} />;
+};

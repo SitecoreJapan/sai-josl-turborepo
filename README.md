@@ -1,48 +1,52 @@
-# XM Cloud Front End Application Starter Kits
+# XM Cloud Front End Turborepo example
 
-This repository contains multiple Next.js Starter Kits, and the SPA Starters monorepo (which includes a Node Proxy Application and and SPA starter apps) for Sitecore XM Cloud Development. It is intended to get developers up and running quickly with a new front end project that is integrated with Sitecore XM Cloud.
+This repository contains a Turborepo example based on the starter kit for Sitecore XM Cloud Development.
 
 [Deploying XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploying-xm-cloud.html)
 
 Here's a quick overview of the major folders and their purpose:
 
-  - `/examples`:
-  Contains starter front-end applications. Each subfolder is a working app
-    * basic-nextjs: [README](https://github.com/Sitecore/xmcloud-starter-js/tree/main/examples/basic-nextjs/README.md) 
-    * basic-spa: [README](https://github.com/Sitecore/xmcloud-starter-js/tree/main/examples/basic-spa/README.md) 
-    * kit-nextjs-article-starter: [README](https://github.com/Sitecore/xmcloud-starter-js/tree/main/examples/kit-nextjs-article-starter/README.md)
-    * kit-nextjs-location-finder: [README](https://github.com/Sitecore/xmcloud-starter-js/blob/main/examples/kit-nextjs-location-finder/README.md)
-    * kit-nextjs-product-listing: [README](https://github.com/Sitecore/xmcloud-starter-js/blob/main/examples/kit-nextjs-product-listing/README.md)
-    * kit-nextjs-skate-park: [README](https://github.com/Sitecore/xmcloud-starter-js/blob/main/examples/kit-nextjs-skate-park/README.md)
+- `/headapps`:
+  A Turborepo monorepo containing starter front-end applications managed with **pnpm workspaces**. Includes:
 
-  - `/local-containers`:
+  - `apps/`: Front-end applications (e.g., `nextjsstarter/` — the Next.js rendering host for XM Cloud)
+  - `packages/`: Shared libraries and UI components
+    - `typescript-config/`: Shared TypeScript configurations (base, nextjs, react-library)
+    - `ui/`: Reusable React components and types
+  - `turbo.json`: Defines Turborepo pipeline for coordinated builds
+  - `pnpm-workspace.yaml`: Declares workspaces for dependency linking
+  - Enables efficient code sharing, caching, and monolithic version management
+
+- `/local-containers`:
   Contains Docker-related files for local development environments.
 
-  - `/authoring`: 
-    The authoring folder is where Sitecore content items are defined and stored for deployment. These items include:
-    * Templates: located under /items — defines the structure of content items used in the application..
-    * Powershell, Modules, etc. Organized by namespace under items/items, useful for modular development and deployment.
-    * Modules: Each module has its own .module.json file (e.g., nextjs-starter.module.json) to define what items it includes and where they should be deployed in the Sitecore content tree.
+- `/authoring`:
+  The authoring folder is where Sitecore content items are defined and stored for deployment. These items include:
 
-  - `xmcloud.build.json`: 
-    This is the primary configuration file for building and deploying rendering hosts in your XM Cloud environment.
+  - Templates: located under /items — defines the structure of content items used in the application..
+  - Powershell, Modules, etc. Organized by namespace under items/items, useful for modular development and deployment.
+  - Modules: Each module has its own .module.json file (e.g., nextjs-starter.module.json) to define what items it includes and where they should be deployed in the Sitecore content tree.
 
-    Key Sections:
-      * renderingHosts: Defines one or more front-end apps to build. Each entry includes:
+- `xmcloud.build.json`:
+  This is the primary configuration file for building and deploying rendering hosts in your XM Cloud environment.
 
-      * path: where the app is located (e.g., ./examples/kit-nextjs-skate-park)
+  Key Sections:
 
-      * nodeVersion: Node.js version used during build
+  - renderingHosts: Defines one or more front-end apps to build. Each entry includes:
 
-      * jssDeploymentSecret: Deployment auth key for JSS
+  - path: where the app is located (e.g., ./examples/kit-nextjs-skate-park)
 
-      * enabled: Whether the rendering host is active
+  - nodeVersion: Node.js version used during build
 
-      * buildCommand / runCommand: Custom scripts for build/start
+  - jssDeploymentSecret: Deployment auth key for JSS
 
-      * postActions: Actions that run after a successful deployment, such as warming up the CM server or triggering reindexing.
+  - enabled: Whether the rendering host is active
 
-      * authoringPath: Path to the folder containing Sitecore item definitions (default is ./authoring).
+  - buildCommand / runCommand: Custom scripts for build/start
+
+  - postActions: Actions that run after a successful deployment, such as warming up the CM server or triggering reindexing.
+
+  - authoringPath: Path to the folder containing Sitecore item definitions (default is ./authoring).
 
 ## GitHub Template
 
@@ -59,8 +63,9 @@ For developers new to XM Cloud you can follow the Getting Started Guide on the [
 
 ### Running the Next.js Starter Kit
 
->  **Note:** Please refer to the `README.md` of the specific example starter you’re working with for detailed setup instructions.
+> **Note:** Please refer to the `README.md` of the specific example starter you’re working with for detailed setup instructions.
 > The following outlines the general steps to run the app locally:
+
 - Log into the Sitecore XM Cloud Deploy Portal, locate your Environment and select the `Developer Settings` tab.
 - Ensure that the `Preview` toggle is enabled.
 - In the `Local Development` section, click to copy the sample `.env` file contents to your clipboard.
