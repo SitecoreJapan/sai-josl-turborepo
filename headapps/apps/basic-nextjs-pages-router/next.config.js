@@ -5,7 +5,7 @@ const SassAlias = require('sass-alias');
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  //transpilePackages: ['@myorg/shared'],
+  transpilePackages: ['@repo/typescript-config', '@repo/ui'],
 
   // Allow specifying a distinct distDir when concurrently running app in a container
   distDir: process.env.NEXTJS_DIST_DIR || '.next',
