@@ -28,10 +28,13 @@ export default async function Page({ params, searchParams }: PageProps) {
 
   // Set site and locale to be available in src/i18n/request.ts for fetching the dictionary
   setRequestLocale(`${site}_${locale}`);
+  const searchParamsObj = await searchParams;
+  const isPreview =
+    Object.keys(searchParamsObj).length > 0 && "itemId" in searchParamsObj;
 
   // Fetch the page data from Sitecore
   let page;
-  if (draft.isEnabled) {
+  if (isPreview) {
     const editingParams = await searchParams;
     if (isDesignLibraryPreviewData(editingParams)) {
       page = await client.getDesignLibraryData(editingParams);
@@ -51,7 +54,7 @@ export default async function Page({ params, searchParams }: PageProps) {
   const componentProps = await client.getComponentData(
     page.layout,
     {},
-    components
+    components,
   );
 
   return (
@@ -78,7 +81,7 @@ export const generateStaticParams = async () => {
 
     return await client.getAppRouterStaticParams(
       allowedSites,
-      routing.locales.slice()
+      routing.locales.slice(),
     );
   }
   return [];
