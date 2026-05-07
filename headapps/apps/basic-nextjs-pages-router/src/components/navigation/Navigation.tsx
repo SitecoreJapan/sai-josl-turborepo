@@ -1,13 +1,7 @@
-"use client";
-import React, { useState, JSX } from "react";
-import {
-  Link,
-  LinkField,
-  Text,
-  TextField,
-  useSitecore,
-} from "@sitecore-content-sdk/nextjs";
-import { ComponentProps } from "lib/component-props";
+'use client';
+import React, { useState, JSX } from 'react';
+import { Link, LinkField, Text, TextField, useSitecore } from '@sitecore-content-sdk/nextjs';
+import { ComponentProps } from 'lib/component-props';
 
 interface Fields {
   Id: string;
@@ -55,11 +49,9 @@ const NavigationListItem: React.FC<NavigationListItemProps> = ({
   const [isActive, setIsActive] = useState(false);
   const { page } = useSitecore();
 
-  const classNames = [
-    ...fields.Styles,
-    `rel-level${relativeLevel}`,
-    isActive ? "active" : "",
-  ].join(" ");
+  const classNames = [...fields.Styles, `rel-level${relativeLevel}`, isActive ? 'active' : ''].join(
+    ' '
+  );
 
   const hasChildren = fields.Children?.length > 0;
   const children = hasChildren
@@ -76,14 +68,10 @@ const NavigationListItem: React.FC<NavigationListItemProps> = ({
   return (
     <li className={classNames} key={fields.Id} tabIndex={0}>
       <div
-        className={`navigation-title ${hasChildren ? "child" : ""}`}
+        className={`navigation-title ${hasChildren ? 'child' : ''}`}
         onClick={() => setIsActive(!isActive)}
       >
-        <Link
-          field={getLinkField(fields)}
-          editable={page.mode.isEditing}
-          onClick={handleClick}
-        >
+        <Link field={getLinkField(fields)} editable={page.mode.isEditing} onClick={handleClick}>
           {getTextContent(fields)}
         </Link>
       </div>
@@ -105,10 +93,7 @@ export const Default = ({ params, fields }: NavigationProps) => {
     );
   }
 
-  const handleToggleMenu = (
-    event?: React.MouseEvent<HTMLElement>,
-    forceState?: boolean
-  ) => {
+  const handleToggleMenu = (event?: React.MouseEvent<HTMLElement>, forceState?: boolean) => {
     if (event && page.mode.isEditing) {
       event.preventDefault();
     }
