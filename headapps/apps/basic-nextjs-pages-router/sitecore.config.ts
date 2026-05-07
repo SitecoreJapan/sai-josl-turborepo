@@ -19,7 +19,7 @@ export default defineConfig({
       apiHost: process.env.NEXT_PUBLIC_SITECORE_API_HOST || '',
     },
   },
-  defaultSite: process.env.NEXT_PUBLIC_DEFAULT_SITE_NAME || 'demo',
+  defaultSite: process.env.NEXT_PUBLIC_DEFAULT_SITE_NAME || 'demopagerouter',
   defaultLanguage: process.env.NEXT_PUBLIC_DEFAULT_LANGUAGE || 'en',
   editingSecret: process.env.SITECORE_EDITING_SECRET,
   redirects: {
