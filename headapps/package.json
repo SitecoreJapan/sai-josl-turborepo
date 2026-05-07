@@ -1,10 +1,6 @@
 {
   "name": "head",
   "scripts": {
-    "nextjsstarter-install-build": "pnpm install && pnpm nextjsstarter-build:next",
-    "nextjsstarter-build:next": "turbo run build --filter=nextjsstarter",
-    "nextjsstarter-start": "turbo run start --filter=nextjsstarter",
-    "nextjsstarter-dev": "turbo run dev --filter=nextjsstarter",
     "pagesrouter-install-build": "pnpm install && pnpm pagesrouter-build:next",
     "pagesrouter-build:next": "turbo run build --filter=pagesrouter",
     "pagesrouter-start": "turbo run start --filter=pagesrouter",

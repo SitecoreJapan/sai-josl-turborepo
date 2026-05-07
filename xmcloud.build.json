@@ -1,27 +1,9 @@
 {
   "renderingHosts": {
-    "nextjsstarter": {
+    "nextjsstarterpagerouter": {
       "path": "./headapps",
       "nodeVersion": "22.11.0",
       "jssDeploymentSecret": "110F1C44A496B45478640DD36F80C18C9",
-      "enabled": true,
-      "type": "sxa",
-      "buildCommand": "nextjsstarter-install-build",
-      "runCommand": "nextjsstarter-start"
-    },
-    "pagesrouter": {
-      "path": "./headapps",
-      "nodeVersion": "22.11.0",
-      "jssDeploymentSecret": "110F1C44A496B45478640DD36F80C18C9",
-      "enabled": true,
-      "type": "sxa",
-      "buildCommand": "pagesrouter-install-build",
-      "runCommand": "pagesrouter-start"
-    },
-    "pagesrouter2": {
-      "path": "./headapps",
-      "nodeVersion": "22.11.0",
-      "jssDeploymentSecret": "110F1C44A496B45478640DD36F80C18C0",
       "enabled": true,
       "type": "sxa",
       "buildCommand": "pagesrouter-install-build",

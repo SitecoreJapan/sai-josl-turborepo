@@ -1,0 +1,26 @@
+{
+  "name": "head",
+  "scripts": {
+    "nextjsstarter-install-build": "pnpm install && pnpm nextjsstarter-build:next",
+    "nextjsstarter-build:next": "turbo run build --filter=nextjsstarter",
+    "nextjsstarter-start": "turbo run start --filter=nextjsstarter",
+    "nextjsstarter-dev": "turbo run dev --filter=nextjsstarter",
+    "pagesrouter-install-build": "pnpm install && pnpm pagesrouter-build:next",
+    "pagesrouter-build:next": "turbo run build --filter=pagesrouter",
+    "pagesrouter-start": "turbo run start --filter=pagesrouter",
+    "pagesrouter-dev": "turbo run dev --filter=pagesrouter"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "turbo": "^2.7.3"
+  },
+  "engines": {
+    "node": ">=24.4.1",
+    "pnpm": ">=10.27.0"
+  },
+  "packageManager": "pnpm@10.27.0",
+  "dependencies": {}
+}
