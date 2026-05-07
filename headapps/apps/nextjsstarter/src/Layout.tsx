@@ -5,6 +5,7 @@ import SitecoreStyles from "components/content-sdk/SitecoreStyles";
 import { DesignLibraryApp } from "@sitecore-content-sdk/nextjs";
 import { AppPlaceholder } from "@sitecore-content-sdk/nextjs";
 import componentMap from ".sitecore/component-map";
+import { HelloWorld } from "@repo/ui";
 
 interface LayoutProps {
   page: Page;
@@ -62,6 +63,7 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
                   />
                 )}
               </div>
+              <HelloWorld />
             </main>
             <footer>
               <div id="footer">
