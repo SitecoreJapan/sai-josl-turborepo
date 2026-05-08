@@ -76,7 +76,7 @@
     "type-check": "tsc --noEmit --incremental false",
     "build": "cross-env NODE_ENV=production && pnpm run sitecore-tools:generate-map && pnpm run sitecore-tools:build && pnpm run next:build",
     "lint": "eslint ./src/**/*.tsx ./src/**/*.ts",
-    "next:build": "next build",
+    "next:build": "next build --webpack",
     "next:dev": "cross-env NODE_OPTIONS='--inspect' next dev --webpack",
     "next:start": "next start",
     "sitecore-tools:generate-map": "sitecore-tools project component generate-map",
