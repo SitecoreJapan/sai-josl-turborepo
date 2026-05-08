@@ -1,23 +1,15 @@
 import { JSX } from 'react';
-import { Field, ComponentParams, ComponentRendering } from '@sitecore-content-sdk/nextjs';
-type ComponentProps = {
-    rendering: ComponentRendering;
-    params: ComponentParams;
-    myData: string;
-};
-type BlogData = {
-    userId: string;
-    id: string;
-    name: string;
-    title: string;
-    body: string;
-};
-type GlobalContentBlockProps = ComponentProps & BlogData & {
-    fields: {
-        Heading: Field<string>;
-        Content: Field<string>;
+import { Field } from '@sitecore-content-sdk/nextjs';
+interface Fields {
+    Heading: Field<string>;
+    Content: Field<string>;
+}
+type GlobalContentBlockProps = {
+    params: {
+        [key: string]: string;
     };
+    fields: Fields;
 };
-declare const _default: (props: GlobalContentBlockProps) => JSX.Element | null;
-export default _default;
+export declare const Default: (props: GlobalContentBlockProps) => JSX.Element;
+export {};
 //# sourceMappingURL=GlobalContentBlock.d.ts.map
