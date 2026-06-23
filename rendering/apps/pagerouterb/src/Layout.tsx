@@ -45,7 +45,7 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
             </header>
             <main>
               <HelloWorld />
-              <h1>This is Page router A</h1>
+              <h1>This is Page router B</h1>
               <div id="content">
                 {route && <Placeholder name="headless-main" rendering={route} />}
               </div>

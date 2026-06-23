@@ -9,7 +9,10 @@
     "format": "turbo format",
     "build-pageroutera": "npm run build -w @sample/pageroutera",
     "run-pageroutera": "npm run start -w @sample/pageroutera",
-    "dev-pageroutera": "cd apps/pageroutera && npm run dev"
+    "dev-pageroutera": "cd apps/pageroutera && npm run dev",
+    "build-pagerouterb": "npm run build -w @sample/pagerouterb",
+    "run-pagerouterb": "npm run start -w @sample/pagerouterb",
+    "dev-pagerouterb": "cd apps/pagerouterb && npm run dev"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",

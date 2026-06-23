@@ -1,10 +1,10 @@
 {
-  "name": "@sample/pageroutera",
+  "name": "@sample/pagerouterb",
   "description": "Application utilizing Content SDK and Next.js",
   "version": "2.0.0",
   "private": true,
   "config": {
-    "appName": "pagesroutera",
+    "appName": "pagesrouterb",
     "graphQLEndpointPath": "/sitecore/api/graph/edge",
     "language": "en",
     "template": "nextjs"
