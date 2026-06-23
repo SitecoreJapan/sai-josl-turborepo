@@ -1,6 +1,6 @@
 import { JSX } from 'react';
 import { Placeholder } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from 'lib/component-props';
+import { ComponentProps } from '../../lib/component-props';
 
 /**
  * The number of columns that can be inserted into the column splitter component.

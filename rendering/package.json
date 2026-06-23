@@ -1,5 +1,5 @@
 {
-  "name": "ucq",
+  "name": "sample",
   "private": true,
   "scripts": {
     "build": "turbo build",

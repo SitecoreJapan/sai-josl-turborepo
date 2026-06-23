@@ -1,5 +1,5 @@
-import { Link as ContentSdkLink, Text, LinkField, TextField } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from 'lib/component-props';
+import { Link as ContentSdkLink, LinkField, Text, TextField } from '@sitecore-content-sdk/nextjs';
+import { ComponentProps } from '../../lib/component-props';
 
 interface LinkListProps extends ComponentProps {
   fields: {

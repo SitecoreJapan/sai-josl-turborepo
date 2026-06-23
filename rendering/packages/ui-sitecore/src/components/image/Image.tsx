@@ -1,13 +1,13 @@
 import {
+  NextImage as ContentSdkImage,
+  Link as ContentSdkLink,
   Field,
   ImageField,
   LinkField,
-  useSitecore,
-  NextImage as ContentSdkImage,
-  Link as ContentSdkLink,
   Text,
+  useSitecore,
 } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from 'lib/component-props';
+import { ComponentProps } from '../../lib/component-props';
 
 interface ImageFields {
   Image: ImageField;

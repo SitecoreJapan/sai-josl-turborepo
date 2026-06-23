@@ -1,6 +1,7 @@
 import { JSX } from 'react';
-import { Field, RichText as ContentSdkRichText } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from 'lib/component-props';
+import { RichText as ContentSdkRichText, Field } from '@sitecore-content-sdk/nextjs';
+import { ComponentProps } from '../../lib/component-props';
+
 // import { useRouter } from 'next/router';
 
 interface Fields {

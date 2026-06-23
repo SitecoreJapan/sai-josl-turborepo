@@ -1,6 +1,6 @@
-import { Placeholder } from '@sitecore-content-sdk/nextjs';
 import { JSX } from 'react';
-import { ComponentProps } from 'lib/component-props';
+import { Placeholder } from '@sitecore-content-sdk/nextjs';
+import { ComponentProps } from '../../lib/component-props';
 
 interface ContainerProps extends ComponentProps {
   params: ComponentProps['params'] & {
