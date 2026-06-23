@@ -29,6 +29,7 @@
     "@sitecore/components": "~2.1.0",
     "@sitecore-cloudsdk/events": "^0.5.4",
     "@sample/ui-sitecore": "*",
+    "@sample/ui-nonsitecore": "*",
     "@tailwindcss/postcss": "^4.1.11",
     "tailwind-bootstrap-grid": "^6.0.0",
     "tailwindcss": "^4.1.11",

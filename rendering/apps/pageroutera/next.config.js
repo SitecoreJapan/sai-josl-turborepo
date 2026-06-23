@@ -74,7 +74,7 @@ const nextConfig = {
     ];
   },
 
-  transpilePackages: ['@sample/ui-sitecore'],
+  transpilePackages: ['@sample/ui-sitecore', '@sample/ui-nonsitecore'],
 
   webpack: (config, options) => {
     if (!options.isServer) {

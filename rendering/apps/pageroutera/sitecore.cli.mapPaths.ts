@@ -3,6 +3,7 @@ import path from 'path';
 
 const mapPaths: Record<string, string> = {
   '../../packages/ui-sitecore/src/components': '@sample/ui-sitecore/src/components',
+  '../../packages/ui-nonsitecore/src/components': '@sample/ui-nonsitecore/src/components',
 };
 
 const destination = '.sitecore';
