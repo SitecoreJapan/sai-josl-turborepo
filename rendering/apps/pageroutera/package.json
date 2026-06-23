@@ -28,6 +28,7 @@
     "@sitecore-feaas/clientside": "^0.6.0",
     "@sitecore/components": "~2.1.0",
     "@sitecore-cloudsdk/events": "^0.5.4",
+    "@sample/ui-sitecore": "*",
     "bootstrap": "^5.3.6",
     "font-awesome": "^4.7.0",
     "next": "^16.1.1",
@@ -70,17 +71,18 @@
     "minimatch@<3.1.3": "3.1.5"
   },
   "scripts": {
-    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
-    "type-check": "tsc --noEmit --incremental false",
-    "build": "cross-env NODE_ENV=production && pnpm run sitecore-tools:generate-map && pnpm run sitecore-tools:build && pnpm run next:build",
-    "lint": "eslint ./src/**/*.tsx ./src/**/*.ts",
-    "next:build": "next build --webpack",
-    "next:dev": "cross-env NODE_OPTIONS='--inspect' next dev --webpack",
+    "build": "cross-env NODE_ENV=production npm-run-all --serial sitecore-tools:build aceik-tools:fix-map next:build",
+    "lint": "eslint --fix ./src/**/*.tsx ./src/**/*.ts",
+    "format": "prettier --write .",
+    "check-types": "tsc --noEmit",
+    "next:build": "next build",
+    "next:dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "next:start": "next start",
     "sitecore-tools:generate-map": "sitecore-tools project component generate-map",
     "sitecore-tools:generate-map:watch": "sitecore-tools project component generate-map --watch",
     "sitecore-tools:build": "sitecore-tools project build",
-    "dev": "cross-env NODE_ENV=development && pnpm run sitecore-tools:generate-map && pnpm run sitecore-tools:build && pnpm run next:dev && pnpm run sitecore-tools:generate-map:watch",
-    "start": "cross-env-shell NODE_ENV=production && pnpm run build && pnpm run next:start"
+    "aceik-tools:fix-map": "npx tsx ./sitecore.cli.mapPaths.ts",
+    "dev": "cross-env NODE_ENV=development npm-run-all --serial sitecore-tools:build sitecore-tools:generate-map aceik-tools:fix-map --parallel next:dev",
+    "start": "cross-env-shell NODE_ENV=production npm-run-all --serial build next:start"
   }
 }

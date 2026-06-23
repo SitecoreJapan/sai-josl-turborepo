@@ -4,28 +4,23 @@ import { BYOCWrapper, NextjsContentSdkComponent, FEaaSWrapper } from '@sitecore-
 import { Form } from '@sitecore-content-sdk/nextjs';
 
 // end of built-in components
-import * as Title from 'src/components/title/Title';
-import * as TestComponent from 'src/components/test-component/TestComponent';
-import * as RowSplitter from 'src/components/row-splitter/RowSplitter';
-import * as RichText from 'src/components/rich-text/RichText';
-import * as Promo from 'src/components/promo/Promo';
-import * as PartialDesignDynamicPlaceholder from 'src/components/partial-design-dynamic-placeholder/PartialDesignDynamicPlaceholder';
-import * as PageContent from 'src/components/page-content/PageContent';
-import * as Navigation from 'src/components/navigation/Navigation';
-import * as LinkList from 'src/components/link-list/LinkList';
-import * as LayoutColumn from 'src/components/layout-column/LayoutColumn';
-import * as LayoutBackgroundColor from 'src/components/layout-column/LayoutBackgroundColor';
-import * as Image from 'src/components/image/Image';
-import * as ContentBlock from 'src/components/content-block/ContentBlock';
-import * as Container from 'src/components/container/Container';
-import * as ColumnSplitter from 'src/components/column-splitter/ColumnSplitter';
+import * as Title from '@sample/ui-sitecore/src/components/title/Title';
+import * as RowSplitter from '@sample/ui-sitecore/src/components/row-splitter/RowSplitter';
+import * as RichText from '@sample/ui-sitecore/src/components/rich-text/RichText';
+import * as Promo from '@sample/ui-sitecore/src/components/promo/Promo';
+import * as PartialDesignDynamicPlaceholder from '@sample/ui-sitecore/src/components/partial-design-dynamic-placeholder/PartialDesignDynamicPlaceholder';
+import * as PageContent from '@sample/ui-sitecore/src/components/page-content/PageContent';
+import * as Navigation from '@sample/ui-sitecore/src/components/navigation/Navigation';
+import * as LinkList from '@sample/ui-sitecore/src/components/link-list/LinkList';
+import * as Image from '@sample/ui-sitecore/src/components/image/Image';
+import * as Container from '@sample/ui-sitecore/src/components/container/Container';
+import * as ColumnSplitter from '@sample/ui-sitecore/src/components/column-splitter/ColumnSplitter';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCWrapper],
   ['FEaaSWrapper', FEaaSWrapper],
   ['Form', Form],
   ['Title', { ...Title }],
-  ['TestComponent', { ...TestComponent }],
   ['RowSplitter', { ...RowSplitter }],
   ['RichText', { ...RichText }],
   ['Promo', { ...Promo }],
@@ -33,12 +28,10 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['PageContent', { ...PageContent }],
   ['Navigation', { ...Navigation }],
   ['LinkList', { ...LinkList }],
-  ['LayoutColumn', { ...LayoutColumn }],
-  ['LayoutBackgroundColor', { ...LayoutBackgroundColor }],
   ['Image', { ...Image }],
-  ['ContentBlock', { ...ContentBlock }],
   ['Container', { ...Container }],
   ['ColumnSplitter', { ...ColumnSplitter }],
 ]);
 
 export default componentMap;
+

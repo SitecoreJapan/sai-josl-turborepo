@@ -1,15 +1,15 @@
-const path = require('path');
-
 /**
  * @type {import('next').NextConfig}
- * Next.js 16 defaults to Turbopack; this app relies on custom webpack (Content SDK
- * component-props-loader, FEAAS externals). Scripts use `next * --webpack`; see next:build/next:dev.
  */
 const nextConfig = {
-  transpilePackages: ['@repo/ui'],
-
   // Allow specifying a distinct distDir when concurrently running app in a container
   distDir: process.env.NEXTJS_DIST_DIR || '.next',
+
+  // Enable Turbopack file system caching for faster dev startup (beta)
+  // See: https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack
+  experimental: {
+    turbopackFileSystemCacheForDev: true,
+  },
 
   i18n: {
     // These are all the locales you want to support in your application.
@@ -41,9 +41,12 @@ const nextConfig = {
         hostname: 'xmc-*.**',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'xmcloudcm.localhost',
+        port: '',
+      },
     ],
-    // Disable image optimization in development to avoid upstream timeouts
-    unoptimized: process.env.NODE_ENV === 'development',
   },
 
   async rewrites() {
@@ -58,29 +61,10 @@ const nextConfig = {
         source: '/robots.txt',
         destination: '/api/robots',
       },
-      {
-        source: '/llms.txt',
-        destination: '/api/llms-txt',
-      },
       // sitemap route
       {
-        source: '/sitemap.xml',
+        source: '/sitemap:id([\\w-]{0,}).xml',
         destination: '/api/sitemap',
-      },
-      // Numbered sitemap index pages (e.g. /sitemap-0.xml, /sitemap-1.xml)
-      {
-        source: '/sitemap-:id(\\d+).xml',
-        destination: '/api/sitemap',
-      },
-      // ai.txt route for AI crawlers
-      {
-        source: '/.well-known/ai.txt',
-        destination: '/api/well-known/ai-txt',
-      },
-      // LLM-optimized sitemap for AI crawler ingestion
-      {
-        source: '/sitemap-llm.xml',
-        destination: '/api/sitemap-llm',
       },
       // feaas api route
       {
@@ -89,6 +73,8 @@ const nextConfig = {
       },
     ];
   },
+
+  transpilePackages: ['@sample/ui-sitecore'],
 
   webpack: (config, options) => {
     if (!options.isServer) {
@@ -112,17 +98,6 @@ const nextConfig = {
     }
 
     return config;
-  },
-
-  // Sass: dart-sass 1.80+ / Next 16 use the modern compiler API; legacy importers
-  // (e.g. sass-alias getImporter()) are invalid. Use includePaths for theme imports if needed.
-  sassOptions: {
-    includePaths: [
-      path.join(process.cwd(), 'node_modules'),
-      path.join(process.cwd(), 'src', 'assets', 'globals'),
-    ],
-    quietDeps: true,
-    silenceDeprecations: ['import', 'legacy-js-api'],
   },
 };
 

@@ -7,16 +7,15 @@ import {
 } from '@sitecore-content-sdk/nextjs/codegen';
 // end of built-in imports
 
-import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
-import { Link, Text, useSitecore, Placeholder, RichText, NextImage, CdpHelper, withDatasourceCheck } from '@sitecore-content-sdk/nextjs';
-import { useState, useEffect } from 'react';
-import React from 'react';
-import NextLink from 'next/link';
+import { jsx, Fragment, jsxs } from 'react/jsx-runtime';
 import Head from 'next/head';
 import client from 'lib/sitecore-client';
 import Image from 'next/image';
 import * as FEAAS from '@sitecore-feaas/clientside/react';
 import nextConfig from 'next.config';
+import { CdpHelper, useSitecore, Link, Text, Placeholder, RichText, NextImage } from '@sitecore-content-sdk/nextjs';
+import { useEffect, useState } from 'react';
+import React from 'react';
 import { pageView } from '@sitecore-content-sdk/events';
 import config from 'sitecore.config';
 
@@ -25,35 +24,8 @@ const importMap = [
     module: 'react/jsx-runtime',
     exports: [
       { name: 'jsx', value: jsx },
-      { name: 'jsxs', value: jsxs },
       { name: 'Fragment', value: Fragment },
-    ]
-  },
-  {
-    module: '@sitecore-content-sdk/nextjs',
-    exports: [
-      { name: 'Link', value: Link },
-      { name: 'Text', value: Text },
-      { name: 'useSitecore', value: useSitecore },
-      { name: 'Placeholder', value: Placeholder },
-      { name: 'RichText', value: RichText },
-      { name: 'NextImage', value: NextImage },
-      { name: 'CdpHelper', value: CdpHelper },
-      { name: 'withDatasourceCheck', value: withDatasourceCheck },
-    ]
-  },
-  {
-    module: 'react',
-    exports: [
-      { name: 'useState', value: useState },
-      { name: 'useEffect', value: useEffect },
-      { name: 'default', value: React },
-    ]
-  },
-  {
-    module: 'next/link',
-    exports: [
-      { name: 'default', value: NextLink },
+      { name: 'jsxs', value: jsxs },
     ]
   },
   {
@@ -84,6 +56,26 @@ const importMap = [
     module: 'next.config',
     exports: [
       { name: 'default', value: nextConfig },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/nextjs',
+    exports: [
+      { name: 'CdpHelper', value: CdpHelper },
+      { name: 'useSitecore', value: useSitecore },
+      { name: 'Link', value: Link },
+      { name: 'Text', value: Text },
+      { name: 'Placeholder', value: Placeholder },
+      { name: 'RichText', value: RichText },
+      { name: 'NextImage', value: NextImage },
+    ]
+  },
+  {
+    module: 'react',
+    exports: [
+      { name: 'useEffect', value: useEffect },
+      { name: 'useState', value: useState },
+      { name: 'default', value: React },
     ]
   },
   {
