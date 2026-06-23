@@ -1,5 +1,5 @@
 {
-  "name": "@sample/pagesroutera",
+  "name": "@sample/pageroutera",
   "description": "Application utilizing Content SDK and Next.js",
   "version": "1.0.0",
   "private": true,
